@@ -38,24 +38,6 @@ def addinventory():
         mycursor.execute("INSERT INTO inventory VALUES(%s, %s, %s, %s, %s)", (fono, fona, foty, price, qty))
         mydb.commit()
 
-def modify(tablename):
-    tarfie = input("Enter Field to be modified:")
-    if tablename == "inventory":
-        if tarfie in ["Food Number", "Food Name", "Food Type", "Price", "Quantity"]:
-            tarval = eval(input("Enter Food_Number:"))
-            chanval = eval(input("Enter new value:"))
-            mycursor.execute("UPDATE %s SET %s=%s WHERE %s=%s" % (tablename, tarfie, chanval, "Food_Number", tarval))
-            mydb.commit()
-        else:
-            print("Field Does not Exist")
-    else:
-        if tarfie in ["Date", "Food Number", "Food Name", "Quantity", "Price", "Total Cost"]:
-            tarval = eval(input("Enter Food_Number:"))
-            chanval = eval(input("Enter new value:"))
-            mycursor.execute("UPDATE %s SET %s=%s WHERE %s=%s" % (tablename, tarfie, chanval, "Food_Number", tarval))
-            mydb.commit()
-        else:
-            print("Field Does not Exist")
 
 def delete(tablename):
     fono = int(input("Enter Food Number:"))
